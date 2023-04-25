@@ -1,40 +1,20 @@
 #include "main.h"
 
 /**
- * print_String - print exclusuives string.
- * @val: argumen t.
- * Return: the length of the string.
+ * print_string - Prints a string
+ * @list: list of arguments
+ * Return: Will return the amount of characters printed.
  */
 
-int print_String(va_list val)
+int print_string(va_list list)
 {
-	char *s;
-	int i, len = 0;
-	int cast;
+	int i;
+	char *str;
 
-	s = va_arg(val, char *);
-	if (s == NULL)
-		s = "(null)";
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] < 32 || s[i] >= 127)
-		{
-			_putchar('\\');
-			_putchar('x');
-			len = len + 2;
-			cast = s[i];
-			if (cast < 16)
-			{
-				_putchar('0');
-				len++;
-			}
-			len = len + print_hex_aux(cast);
-		}
-		else
-		{
-			_putchar(s[i]);
-			len++;
-		}
-	}
-	return (len);
+	str = va_arg(list, char *);
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
+	return (i);
 }
