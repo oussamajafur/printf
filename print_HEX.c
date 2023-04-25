@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_hex - Prints a representation of a decimal number on base16 lowercase
+ * print_HEX - Prints a representation of a decimal number on base16 Uppercase
  * @list: List of the arguments passed to the function
  * Return: Number of characters printed
  */
 
-int print_hex(va_list list)
+int print_HEX(va_list list)
 {
 	unsigned int num;
 	int len;
@@ -29,7 +29,7 @@ int print_hex(va_list list)
 		rem_num = num % 16;
 		if (rem_num > 9)
 		{
-			rem_num = hex_check(rem_num, 'x');
+			rem_num = hex_check(rem_num, 'X');
 			hex_rep[len] = rem_num;
 		}
 		else
